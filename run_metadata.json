@@ -1,0 +1,19 @@
+{
+  "data_source": "Yahoo Finance via yfinance; S&P 500 constituent list from Wikipedia",
+  "benchmark": "^GSPC",
+  "start_date_inclusive": "2021-01-01",
+  "end_date_exclusive": "2025-01-01",
+  "ticker_list_retrieval_date": "2026-11-20",
+  "run_date": "2026-11-20",
+  "observation_date": "2024-12-31",
+  "last_complete_week": "2024-12-27",
+  "minimum_aligned_weekly_returns": 52,
+  "minimum_daily_sessions_for_RFM": 80,
+  "common_valid_share_count": 486,
+  "pandas": "2.2.3",
+  "numpy": "2.4.6",
+  "yfinance": "0.2.66",
+  "scikit_learn": "1.6.1",
+  "scipy": "1.16.3",
+  "matplotlib": "3.10.0"
+}
