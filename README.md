@@ -1,65 +1,39 @@
 # Market Analysis and Stock Segmentation Using RFM
 
-## 1. Project Overview
+## Project Overview
+This project analyses S&P 500 companies using Business Intelligence techniques to identify stock groups based on historical risk, return and trading activity.
 
-This project analyses S&P 500 companies using Business Intelligence techniques to identify stock groups based on their historical risk, return and trading activity.
+Two feature groups are analysed:
+- Risk/Return: Mean Weekly Return and Beta.
+- RFM: Recency, Frequency and Monetary.
 
-Two feature groups are used:
-- **Risk/Return:** Mean Weekly Return and Beta.
-- **Trading Activity (RFM):** Recency, Frequency and Monetary.
+Ward's Hierarchical Clustering and K-means are used to identify and compare stock segments.
 
-The project applies Ward's Hierarchical Clustering and K-means clustering to identify and compare stock segments.
+## Dataset
+- Data source: Yahoo Finance and Wikipedia.
+- Benchmark: S&P 500 Index (^GSPC).
+- Study period: 1 January 2021 – 1 January 2025.
+- Data frequency: Daily stock prices and trading volumes.
 
-## 2. Dataset and Data Sources
-
-- **Stock constituents:** S&P 500 companies from Wikipedia.
-- **Historical market data:** Yahoo Finance using the yfinance Python library.
-- **Benchmark:** S&P 500 Index (^GSPC).
-- **Study period:** 1 January 2021 – 1 January 2025 (end date exclusive).
-- **Data frequency:** Daily stock prices and trading volumes.
-
-## 3. Technologies Used
-
-- Python
-- Google Colab
-- pandas
-- NumPy
+## Technologies Used
+- Python and Google Colab
+- pandas and NumPy
 - yfinance
 - SciPy
 - scikit-learn
 - Matplotlib
-- requests
-- lxml
 
-## 4. Project Methodology
+## Methodology
+**Task 1:** Data collection, validation, weekly return, beta and adapted RFM calculations.
 
-### Task 1 – Data Preparation and Feature Engineering
-- S&P 500 ticker selection and historical data collection.
-- Data validation and quality checks.
-- Weekly return and beta calculations.
-- Adapted RFM feature calculation.
+**Task 2:** Feature preparation, Ward clustering, K-means clustering, cluster comparison and sensitivity analysis.
 
-### Task 2 – Stock Segmentation and Sensitivity Analysis
-- Feature preparation and standardisation.
-- Ward's Hierarchical Clustering.
-- K-means clustering.
-- Cluster profile comparison.
-- RFM correlation analysis.
-- Monetary removal sensitivity analysis.
+**Task 3:** Data mart design, business interpretation and critical review.
 
-### Task 3 – Business Intelligence and Critical Review
-- Data mart design.
-- Business interpretation of stock segments.
-- Evaluation of findings and analytical limitations.
-
-## 5. Repository Files
-
-The repository includes:
-
-- `CRM_Coursework.ipynb` – Main Python analysis notebook.
-- `sp500_constituents.csv` – S&P 500 constituent data.
+## Repository Contents
+- `CRM_Coursework.ipynb` – Main Python notebook.
 - `weekly_features.csv` – Weekly return and beta results.
-- `rfm_features.csv` – RFM feature results.
+- `rfm_features.csv` – RFM results.
 - `final_feature_table_with_clusters.csv` – Feature values and cluster assignments.
 - `inclusion_exclusion_log.csv` – Inclusion and exclusion records.
 - `daily_data_quality_report.csv` – Data quality results.
@@ -67,28 +41,14 @@ The repository includes:
 - `corporate_action_flags.csv` – Corporate action flags.
 - `run_metadata.json` – Run information and package versions.
 
-## 6. How to Run the Project
+## How to Run
+1. Open the notebook using Google Colab.
+2. Run all cells from beginning to end.
+3. Install the required libraries if prompted.
+4. Allow the notebook to retrieve the historical market data.
+5. Review the generated results and visualisations.
 
-1. Open Google Colab.
-2. Upload or open the `.ipynb` notebook.
-3. Run all cells from beginning to end.
-4. Install the required libraries if prompted.
-5. Allow the notebook to retrieve the historical market data.
-6. Review the generated tables, charts and clustering results.
-
-An internet connection is required for downloading the market data.
-
-## 7. Limitations
-
-- The current S&P 500 constituent list is applied to historical data, creating potential survivorship bias.
+## Limitations
+- The current S&P 500 constituent list is applied retrospectively, creating potential survivorship bias.
 - Historical clusters do not predict future stock performance.
-- Beta represents historical market sensitivity.
-- Monetary is an approximate traded-value measure, not market capitalisation or investment inflow.
-
-## 8. References
-
-- Wikipedia – List of S&P 500 Companies.
-- Yahoo Finance – Historical Market Data.
-- Scikit-learn – Clustering Documentation.
-- Ward (1963) – Hierarchical Grouping to Optimize an Objective Function.
-- MacQueen (1967) – Some Methods for Classification and Analysis of Multivariate Observations.
+- Monetary represents approximate traded value, not market capitalisation.
